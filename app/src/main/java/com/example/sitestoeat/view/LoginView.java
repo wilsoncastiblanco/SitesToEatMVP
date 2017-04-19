@@ -5,4 +5,7 @@ package com.example.sitestoeat.view;
  */
 
 public interface LoginView extends BaseView {
+    void throwErrorEmptyFields();
+    void navigateToHome();
+    void showWrongCredentialsMessage();
 }

@@ -30,5 +30,5 @@ public interface BaseView {
   /**
    * Get a {@link android.content.Context}.
    */
-  Context context();
+  Context getContext();
 }

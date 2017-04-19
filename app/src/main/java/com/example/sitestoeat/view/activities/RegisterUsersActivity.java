@@ -1,5 +1,7 @@
 package com.example.sitestoeat.view.activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -15,6 +17,10 @@ public class RegisterUsersActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    public static Intent getCallingIntent(Context context){
+        return new Intent(context, RegisterUsersActivity.class);
     }
 
 }

@@ -58,8 +58,8 @@ public class RestaurantsActivityFragment extends Fragment {
 
     private void registerAlarm() {
         Intent intent = new Intent(getActivity().getApplicationContext(), RequestService.class);
-        intent.putExtra(RequestService.ENDPOINT_KEY, RestConstants.RESTAURANTS_ENDPOINT);
-        intent.putExtra(RequestService.REQUEST_METHOD_KEY, RestConstants.POST_REQUEST);
+        intent.putExtra(RequestService.ENDPOINT_KEY, RestConstants.GET_RESTAURANTES);
+        intent.putExtra(RequestService.REQUEST_METHOD_KEY, RestConstants.POST);
 
         PendingIntent pendingIntentService = PendingIntent.getService(getActivity().getApplicationContext(), 31213, intent, PendingIntent.FLAG_UPDATE_CURRENT);
 
@@ -85,8 +85,8 @@ public class RestaurantsActivityFragment extends Fragment {
 
     private void callRequestService() {
         Intent intent = new Intent(getActivity().getApplicationContext(), RequestService.class);
-        intent.putExtra(RequestService.ENDPOINT_KEY, RestConstants.RESTAURANTS_ENDPOINT);
-        intent.putExtra(RequestService.REQUEST_METHOD_KEY, RestConstants.POST_REQUEST);
+        intent.putExtra(RequestService.ENDPOINT_KEY, RestConstants.GET_RESTAURANTES);
+        intent.putExtra(RequestService.REQUEST_METHOD_KEY, RestConstants.POST);
         getActivity().startService(intent);
     }
 
@@ -102,7 +102,7 @@ public class RestaurantsActivityFragment extends Fragment {
                 validateJsonResponse(jsonObject);
             }
         });
-        requests.execute(RestConstants.RESTAURANTS_ENDPOINT, RestConstants.POST_REQUEST);
+        requests.execute(RestConstants.GET_RESTAURANTES, RestConstants.POST);
     }
 
     private void validateJsonResponse(JSONObject jsonObject) {
@@ -134,7 +134,6 @@ public class RestaurantsActivityFragment extends Fragment {
         public void onReceive(Context context, Intent intent) {
             if (intent.getAction().equalsIgnoreCase(RequestService.ACTION_SEND_RESTAURANTS)) {
                 try {
-                    Toast.makeText(getActivity().getApplicationContext(), "Vengo del servicio", Toast.LENGTH_SHORT).show();
                     String response = intent.getStringExtra(RequestService.RESTAURANTS_KEY);
                     JSONObject jsonObject = new JSONObject(response);
                     validateJsonResponse(jsonObject);

@@ -32,6 +32,10 @@
             android:name="data.contentProviders.RestaurantsContentProvider"
             android:authorities="data.contentProviders.restaurants" />
 
+        <provider
+            android:name="data.contentProviders.UsuariosContentProvider"
+            android:authorities="org.android.food.modelo.contentProviders.UsuariosContentProvider" />
+
         <activity
             android:name=".view.activities.RestaurantsActivity"
             android:label="@string/title_activity_restaurants"
