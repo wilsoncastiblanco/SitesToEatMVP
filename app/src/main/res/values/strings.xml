@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Sites To Eat</string>
+    <string name="login">Iniciar Sesión</string>
+    <string name="login.edittext.hint.user">Ingrese su usuario</string>
+    <string name="login.edittext.hint.password">Ingrese su password</string>
+    <string name="login.signup"><u>Registrar Usuario</u></string>
+    <string name="login.welcome">"Bienvenido, %1$s"</string>
+    <string name="login.error">No existe el usuario y/o la contraseña es incorrecta</string>
+    <string name="title_activity_register_users">Registrar Usuario</string>
+    <string name="action_settings">Settings</string>
+    <string name="register.hint.names">Ingrese nombres</string>
+    <string name="register.hint.login">Login</string>
+    <string name="register.hint.password">Password</string>
+    <string name="login.error.empty_fields">Los campos son obligatorios</string>
+    <string name="login.user_created">Usuario creado con éxito</string>
+    <string name="login.error.creating_user">Ocurrió un error creando el usuario</string>
+    <string name="title_activity_restaurants">Restaurantes</string>
+    <string name="error_data_restaurants">Hubo un error obteniendo la información del restaurante</string>
+</resources>
