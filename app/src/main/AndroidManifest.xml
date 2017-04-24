@@ -6,12 +6,13 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
+        android:name=".SitesToEatApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".view.activities.LoginActivity">
+        <activity android:name=".presentation.view.activities.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,29 +20,29 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.activities.RegisterUsersActivity"
+            android:name=".presentation.view.activities.RegisterUsersActivity"
             android:label="@string/title_activity_register_users"
-            android:parentActivityName=".view.activities.LoginActivity"
+            android:parentActivityName=".presentation.view.activities.LoginActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.sitestoeat.view.activities.LoginActivity" />
+                android:value=".presentation.view.activities.LoginActivity" />
         </activity>
 
         <provider
-            android:name="data.contentProviders.RestaurantsContentProvider"
-            android:authorities="data.contentProviders.restaurants" />
+            android:name=".Infrastructure.contentProviders.RestaurantsContentProvider"
+            android:authorities="com.example.sitestoeat.Infrastructure.contentProviders.restaurants" />
 
         <provider
-            android:name="data.contentProviders.UsuariosContentProvider"
+            android:name=".Infrastructure.contentProviders.UsuariosContentProvider"
             android:authorities="org.android.food.modelo.contentProviders.UsuariosContentProvider" />
 
         <activity
-            android:name=".view.activities.RestaurantsActivity"
+            android:name=".presentation.view.activities.RestaurantsActivity"
             android:label="@string/title_activity_restaurants"
             android:theme="@style/AppTheme.NoActionBar" />
 
-        <service android:name=".view.services.RequestService" />
+        <service android:name=".Infrastructure.services.RequestService" />
 
     </application>
 
